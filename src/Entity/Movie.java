@@ -279,6 +279,12 @@ public class Movie implements Serializable {
 	 * @return String containing all the movie's details.
 	 */
 	public String toString(){
+		String reviewString;
+		if(overallReviewScore==0.0){
+			reviewString = "NA";
+		} else {
+			reviewString = String.valueOf(overallReviewScore);
+		}
 		String outputString = "";
 		outputString = "Movie: " + title +  "\n" +
 						" status: " + status + "\n" +
@@ -288,7 +294,7 @@ public class Movie implements Serializable {
 						" type: " + type + "\n" +
 						" rating: " + rating + "\n" +
 						" total sales: " + totalSales + "\n" +
-						" overall review score: " + overallReviewScore + "\n" +
+						" overall review score: " + reviewString + "\n" +
 						" reviews: \n";
 		if(reviews != null && reviews.size() != 0){
 			for(Review rev : reviews){

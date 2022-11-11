@@ -53,7 +53,7 @@ class MainApp {
 
 			//System.out.println(cineplexController.read().get(0).toString());
 		} catch (Exception e){
-			System.out.println(e.getMessage());
+			//System.out.println(e.getMessage());
 		}
 
 		try {
@@ -69,7 +69,7 @@ class MainApp {
 			//movieController.changeMovieStatus("Jaws", Movie.ShowStatus.ENDOFSHOWING);
 			movieController.getFullMovieCatalog();
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
+			//System.out.println(e.getMessage());
 		}
 
 		try {
@@ -83,7 +83,7 @@ class MainApp {
 			//showTimeController.getAllShowTimesForMovie("Jaws");
 			//System.out.println(showTimeController.getShowTime("Jaws", LocalDateTime.parse("2022-12-03T10:15:30"), "ORCHASCRN1").getMovie().toString());
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
+			//System.out.println(e.getMessage());
 		}
 
 		try{
@@ -93,9 +93,9 @@ class MainApp {
 			ticketPriceController.initialisePricesList();
 			holidayController.initialiseHolidays();
 			systemSettingsController.initialiseSettings();
-			System.out.println("End of init");
+			//System.out.println("End of init");
 		} catch (Exception e){
-			System.out.println(e.getMessage());
+			//System.out.println(e.getMessage());
 		}
 
 
