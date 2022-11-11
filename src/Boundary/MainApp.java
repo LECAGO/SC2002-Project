@@ -67,7 +67,7 @@ class MainApp {
 			movieController.addReview("Jaws", "KEK","bad",2);
 			//System.out.println(movieController.read().get(0).toString());
 			//movieController.changeMovieStatus("Jaws", Movie.ShowStatus.ENDOFSHOWING);
-			movieController.getFullMovieCatalog();
+			//movieController.getFullMovieCatalog();
 		} catch (Exception e) {
 			//System.out.println(e.getMessage());
 		}

@@ -11,6 +11,9 @@ import java.io.Serializable;
  * @since 2022-10-31
  */
 public class Cinema implements Serializable {
+	/**
+	 * Enum representing type of Cinema (Normal, 3D, Premium)
+	 */
 	public enum CinemaTypes {
 		CIN_NORMAL,
 		CIN_3D,
