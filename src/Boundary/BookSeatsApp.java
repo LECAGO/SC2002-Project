@@ -36,8 +36,8 @@ public class BookSeatsApp {
 			if(choice == -1) {
 				return;
 			}
-			if(movieController.getMovieByNo(choice).getStatus() == Movie.ShowStatus.PREVIEW){
-				System.out.println("This movie is for preview only, no booking allowed.");
+			if(movieController.getMovieByNo(choice).getStatus() == Movie.ShowStatus.COMINGSOON){
+				System.out.println("This movie is coming soon, no booking allowed.");
 				return;
 			}
 			while(true){
