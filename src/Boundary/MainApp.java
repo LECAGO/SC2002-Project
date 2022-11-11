@@ -51,9 +51,12 @@ class MainApp {
 			downtownEastCinList.add(new Cinema("scr3", "DNTNESCRN3"));
 			cineplexController.createCineplex("Orchard Cineplex", downtownEastCinList);
 
-			System.out.println(cineplexController.read().get(0).toString());
+			//System.out.println(cineplexController.read().get(0).toString());
+		} catch (Exception e){
+			System.out.println(e.getMessage());
+		}
 
-
+		try {
 			movieController.addMovie("Jaws", Movie.ShowStatus.NOWSHOWING, "Shark eats man", "Steven Spielberg",
 					new String[]{"Roy Scheider", "Robert Shaw", "Richard Dreyluss"}, Movie.MovieType.TYPE_REGULAR, 124, Movie.MovieRating.PG);
 
@@ -61,34 +64,39 @@ class MainApp {
 					new String[]{"Roy Scheider", "Robert Shaw", "Richard Dreyluss"}, Movie.MovieType.TYPE_BLOCKBUSTER, 124, Movie.MovieRating.PG13);
 
 			movieController.addReview("Jaws", "TCL","good",4);
-			//movieController.addReview("Jaws", "KEK","bad",2);
+			movieController.addReview("Jaws", "KEK","bad",2);
 			//System.out.println(movieController.read().get(0).toString());
 			//movieController.changeMovieStatus("Jaws", Movie.ShowStatus.ENDOFSHOWING);
 			movieController.getFullMovieCatalog();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 
+		try {
 			showTimeController.createShowtime("Jaws", LocalDateTime.parse("2022-12-03T10:15:30"), "ORCHASCRN1");
 			showTimeController.createShowtime("Jaws 2", LocalDateTime.parse("2022-12-03T19:15:30"), "ORCHASCRN1");
-			System.out.println(showTimeController.read().get(0).toString());
+			//System.out.println(showTimeController.read().get(0).toString());
 
 			showTimeController.updateSeatStatus(showTimeController.read().get(1), showTimeController.read().get(1).getShowSeatPlan().bookSeat('B', 2));
 			showTimeController.getSeatingForShowtime(1);
 
 			//showTimeController.getAllShowTimesForMovie("Jaws");
 			//System.out.println(showTimeController.getShowTime("Jaws", LocalDateTime.parse("2022-12-03T10:15:30"), "ORCHASCRN1").getMovie().toString());
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 
+		try{
 			userController.addStaff("admin", "admin");
 			userController.addMovieGoer("watcher", "password", "Tan CL", 91234567, "a@b.com", 22, new ArrayList<Booking>());
-			System.out.println(userController.read().get(0));
-
+			//System.out.println(userController.read().get(0));
 			ticketPriceController.initialisePricesList();
 			holidayController.initialiseHolidays();
 			systemSettingsController.initialiseSettings();
-
 			System.out.println("End of init");
 		} catch (Exception e){
 			System.out.println(e.getMessage());
 		}
-
 
 
 		boolean isRunning = true;
