@@ -56,7 +56,13 @@ public class ListTopMoviesApp {
 			int i = 1;
 			for(Movie movie : movieList){
 				if(movie.getStatus() != Movie.ShowStatus.ENDOFSHOWING){
-					System.out.println(i + ": " + movie.getTitle() + " (" +movie.getRating() + ") - Rating " + movie.getOverallReviewScore());
+					String overallScore;
+					if(movie.getOverallReviewScore() == 0.0){
+						overallScore = "NA";
+					} else {
+						overallScore = String.valueOf(movie.getOverallReviewScore());
+					}
+					System.out.println(i + ": " + movie.getTitle() + " (" +movie.getRating() + ") - Rating " + overallScore);
 					i++;
 				}
 				if(i>=5){

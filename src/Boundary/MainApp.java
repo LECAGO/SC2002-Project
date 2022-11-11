@@ -57,10 +57,10 @@ class MainApp {
 		}
 
 		try {
-			movieController.addMovie("Jaws", Movie.ShowStatus.NOWSHOWING, "Shark eats man", "Steven Spielberg",
-					new String[]{"Roy Scheider", "Robert Shaw", "Richard Dreyluss"}, Movie.MovieType.TYPE_REGULAR, 124, Movie.MovieRating.PG);
+			movieController.addMovie("Frozen", Movie.ShowStatus.PREVIEW, "Girl becomes ice queen", "Chris Buck",
+					new String[]{"Kristen Bell, Idina Menzel, Johnathan Groff"}, Movie.MovieType.TYPE_REGULAR, 124, Movie.MovieRating.PG);
 
-			movieController.addMovie("Jaws 2", Movie.ShowStatus.NOWSHOWING, "Shark eats man", "Steven Spielberg",
+			movieController.addMovie("Jaws", Movie.ShowStatus.NOWSHOWING, "Shark eats man", "Steven Spielberg",
 					new String[]{"Roy Scheider", "Robert Shaw", "Richard Dreyluss"}, Movie.MovieType.TYPE_BLOCKBUSTER, 124, Movie.MovieRating.PG13);
 
 			movieController.addReview("Jaws", "TCL","good",4);
@@ -73,12 +73,12 @@ class MainApp {
 		}
 
 		try {
-			showTimeController.createShowtime("Jaws", LocalDateTime.parse("2022-12-03T10:15:30"), "ORCHASCRN1");
-			showTimeController.createShowtime("Jaws 2", LocalDateTime.parse("2022-12-03T19:15:30"), "ORCHASCRN1");
+			showTimeController.createShowtime("Frozen", LocalDateTime.parse("2022-12-01T10:15:30"), "ORCHASCRN1");
+			showTimeController.createShowtime("Jaws", LocalDateTime.parse("2022-12-10T19:15:30"), "ORCHASCRN1");
 			//System.out.println(showTimeController.read().get(0).toString());
 
 			showTimeController.updateSeatStatus(showTimeController.read().get(1), showTimeController.read().get(1).getShowSeatPlan().bookSeat('B', 2));
-			showTimeController.getSeatingForShowtime(1);
+			//showTimeController.getSeatingForShowtime(1);
 
 			//showTimeController.getAllShowTimesForMovie("Jaws");
 			//System.out.println(showTimeController.getShowTime("Jaws", LocalDateTime.parse("2022-12-03T10:15:30"), "ORCHASCRN1").getMovie().toString());
